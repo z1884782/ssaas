@@ -1,0 +1,14 @@
+version: "2.4"
+services:
+  backend:
+    image: ssaas-backend
+    build: node
+    ports:
+      - "3000"
+  reverse-proxy:
+    build: nginx
+    image: ssaas-reverse-proxy
+    ports:
+      - "8080:80"
+  db:
+    build: nginx
